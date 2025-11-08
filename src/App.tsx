@@ -1,7 +1,7 @@
-import { useState,useRef, useEffect,memo } from 'react'
+import { useState, useEffect,memo } from 'react'
 import './App.css'
 // 轉換steam格式為html
-import changeSteamString from './utils/changeSteamString'
+// import changeSteamString from './utils/changeSteamString'
 // 讀取資料
 import getSteamGameData from './server/getSteamData'
 // 設定共用參數
@@ -20,6 +20,8 @@ function App() {
   useEffect(()=>{
     // setDataString(changeSteamString(dataString))
     console.log('進行初始化');
+    // 避免沒使用的error 先在這擺放
+    setLimit(10)
     const getFirstData = async() =>{
       if(moreDataLoading)return;
       setMoreDataLoading(true);
